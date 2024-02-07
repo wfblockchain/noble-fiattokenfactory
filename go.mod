@@ -3,8 +3,8 @@ module github.com/circlefin/noble-fiattokenfactory
 go 1.21
 
 require (
-	cosmossdk.io/errors v1.0.0
-	github.com/cosmos/cosmos-sdk v0.45.16
+	cosmossdk.io/errors v1.0.0-beta.7
+	github.com/cosmos/cosmos-sdk v0.47.3
 	github.com/gogo/protobuf v1.3.3
 	github.com/golang/protobuf v1.5.3
 	github.com/golangci/golangci-lint v1.55.0
@@ -14,16 +14,17 @@ require (
 	github.com/stretchr/testify v1.8.4
 	github.com/tendermint/tendermint v0.34.27
 	github.com/tendermint/tm-db v0.6.7
-	google.golang.org/genproto/googleapis/api v0.0.0-20230526203410-71b5a4ffd15e
+	google.golang.org/genproto/googleapis/api v0.0.0-20230530153820-e85fd2cbaebc
 	google.golang.org/grpc v1.56.2
 	gopkg.in/yaml.v2 v2.4.0
 	mvdan.cc/gofumpt v0.5.0
+	github.com/cometbft/cometbft-db v0.7.0
 )
 
 require (
 	4d63.com/gocheckcompilerdirectives v1.2.1 // indirect
 	4d63.com/gochecknoglobals v0.2.1 // indirect
-	cosmossdk.io/api v0.2.6 // indirect
+	cosmossdk.io/api v0.3.1 // indirect
 	cosmossdk.io/core v0.5.1 // indirect
 	cosmossdk.io/depinject v1.0.0-alpha.3 // indirect
 	filippo.io/edwards25519 v1.0.0 // indirect
@@ -76,7 +77,7 @@ require (
 	github.com/cosmos/cosmos-proto v1.0.0-beta.2 // indirect
 	github.com/cosmos/go-bip39 v1.0.0 // indirect
 	github.com/cosmos/gorocksdb v1.2.0 // indirect
-	github.com/cosmos/iavl v0.19.5 // indirect
+	github.com/cosmos/iavl v0.20.0 // indirect
 	github.com/cosmos/ledger-cosmos-go v0.12.2 // indirect
 	github.com/creachadair/taskgroup v0.4.2 // indirect
 	github.com/curioswitch/go-reassign v0.2.0 // indirect
@@ -128,7 +129,7 @@ require (
 	github.com/golangci/unconvert v0.0.0-20180507085042-28b1c447d1f4 // indirect
 	github.com/google/btree v1.1.2 // indirect
 	github.com/google/go-cmp v0.5.9 // indirect
-	github.com/google/gofuzz v1.1.1-0.20200604201612-c04b05f3adfa // indirect
+	github.com/google/gofuzz v1.2.0 // indirect
 	github.com/google/pprof v0.0.0-20221118152302-e6195bd50e26 // indirect
 	github.com/gordonklaus/ineffassign v0.0.0-20230610083614-0e73809eb601 // indirect
 	github.com/gorilla/websocket v1.5.0 // indirect
@@ -206,7 +207,7 @@ require (
 	github.com/quasilyte/regex/syntax v0.0.0-20210819130434-b3f0c404a727 // indirect
 	github.com/quasilyte/stdinfo v0.0.0-20220114132959-f7386bf02567 // indirect
 	github.com/rcrowley/go-metrics v0.0.0-20201227073835-cf1acfcdf475 // indirect
-	github.com/regen-network/cosmos-proto v0.3.1 // indirect
+	github.com/regen-network/cosmos-proto v0.3.1 // indirect--can comment later
 	github.com/rivo/uniseg v0.4.3 // indirect
 	github.com/rogpeppe/go-internal v1.10.0 // indirect
 	github.com/rs/cors v1.8.3 // indirect
@@ -225,7 +226,7 @@ require (
 	github.com/sonatard/noctx v0.0.2 // indirect
 	github.com/sourcegraph/go-diff v0.7.0 // indirect
 	github.com/spf13/afero v1.9.3 // indirect
-	github.com/spf13/cast v1.5.0 // indirect
+	github.com/spf13/cast v1.5.1 // indirect
 	github.com/spf13/jwalterweatherman v1.1.0 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/spf13/viper v1.15.0 // indirect
@@ -238,7 +239,7 @@ require (
 	github.com/tdakkota/asciicheck v0.2.0 // indirect
 	github.com/tendermint/go-amino v0.16.0 // indirect
 	github.com/tetafro/godot v1.4.15 // indirect
-	github.com/tidwall/btree v1.5.0 // indirect
+	github.com/tidwall/btree v1.6.0 // indirect
 	github.com/timakin/bodyclose v0.0.0-20230421092635-574207250966 // indirect
 	github.com/timonwong/loggercheck v0.9.4 // indirect
 	github.com/tomarrell/wrapcheck/v2 v2.8.1 // indirect
@@ -286,14 +287,16 @@ replace (
 
 	// use cosmos flavored gogo/protobuf
 	// https://github.com/cosmos/cosmos-sdk/issues/8469
+	//will comment later
 	github.com/gogo/protobuf => github.com/regen-network/protobuf v1.3.3-alpha.regen.1
 
 	// use cosmos compatible syndtr/goleveldb
 	github.com/syndtr/goleveldb => github.com/syndtr/goleveldb v1.0.1-0.20210819022825-2ae1ddf74ef7
 
 	// use cometbft
-	github.com/tendermint/tendermint => github.com/cometbft/cometbft v0.34.27
+	//test
+	github.com/tendermint/tendermint => github.com/cometbft/cometbft v0.37.1
 
 	// use cosmos compatible google.golang.org/grpc
-	google.golang.org/grpc => google.golang.org/grpc v1.33.2
+	google.golang.org/grpc => google.golang.org/grpc v1.55.0
 )
