@@ -6,7 +6,9 @@ import (
 	"fmt"
 
 	fiattokenfactorytypes "github.com/circlefin/noble-fiattokenfactory/x/fiattokenfactory/types"
-	simappparams "github.com/cosmos/cosmos-sdk/simapp/params"
+	simtestutil "github.com/cosmos/cosmos-sdk/testutil/sims"
+	simcli "github.com/cosmos/cosmos-sdk/x/simulation/client/cli"
+	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
 	"github.com/cosmos/cosmos-sdk/types"
 	"github.com/icza/dyno"
 	"github.com/strangelove-ventures/interchaintest/v4"
@@ -171,7 +173,7 @@ type Attester struct {
 	Attester string `json:"attester"`
 }
 
-func NobleEncoding() *simappparams.EncodingConfig {
+func NobleEncoding() *simParams.EncodingConfig {
 	cfg := cosmos.DefaultEncoding()
 
 	fiattokenfactorytypes.RegisterInterfaces(cfg.InterfaceRegistry)

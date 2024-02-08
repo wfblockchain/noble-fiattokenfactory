@@ -7,7 +7,9 @@ import (
 	tokenfactorysimulation "github.com/circlefin/noble-fiattokenfactory/x/fiattokenfactory/simulation"
 	"github.com/circlefin/noble-fiattokenfactory/x/fiattokenfactory/types"
 	"github.com/cosmos/cosmos-sdk/baseapp"
-	simappparams "github.com/cosmos/cosmos-sdk/simapp/params"
+	simtestutil "github.com/cosmos/cosmos-sdk/testutil/sims"
+	paramstypes "github.com/cosmos/cosmos-sdk/x/params/types"
+	simcli "github.com/cosmos/cosmos-sdk/x/simulation/client/cli"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/module"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
@@ -20,7 +22,7 @@ import (
 var (
 	_ = sample.AccAddress
 	_ = tokenfactorysimulation.FindAccount
-	_ = simappparams.StakePerAccount
+	_ = simParams.StakePerAccount
 	_ = simulation.MsgEntryKind
 	_ = baseapp.Paramspace
 )

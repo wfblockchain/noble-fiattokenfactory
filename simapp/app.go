@@ -10,10 +10,10 @@ import (
 	"github.com/gorilla/mux"
 	"github.com/rakyll/statik/fs"
 	"github.com/spf13/cast"
-	abci "github.com/tendermint/tendermint/abci/types"
-	"github.com/tendermint/tendermint/libs/log"
-	tmos "github.com/tendermint/tendermint/libs/os"
-	dbm "github.com/tendermint/tm-db"
+	abci "github.com/cometbft/cometbft/abci/types"
+	"github.com/cometbft/cometbft/libs/log"
+	tmos "github.com/cometbft/cometbft/libs/os"
+	dbm "github.com/cometbft/cometbft-db"
 
 	"github.com/cosmos/cosmos-sdk/baseapp"
 	"github.com/cosmos/cosmos-sdk/client"
@@ -44,7 +44,10 @@ import (
 	capabilitykeeper "github.com/cosmos/cosmos-sdk/x/capability/keeper"
 	capabilitytypes "github.com/cosmos/cosmos-sdk/x/capability/types"
 
-	simappparams "github.com/cosmos/cosmos-sdk/simapp/params"
+	simtestutil "github.com/cosmos/cosmos-sdk/testutil/sims"
+	paramstypes "github.com/cosmos/cosmos-sdk/x/params/types"
+	simcli "github.com/cosmos/cosmos-sdk/x/simulation/client/cli"
+	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
 	"github.com/cosmos/cosmos-sdk/x/crisis"
 	crisiskeeper "github.com/cosmos/cosmos-sdk/x/crisis/keeper"
 	crisistypes "github.com/cosmos/cosmos-sdk/x/crisis/types"
@@ -259,7 +262,7 @@ func init() {
 // NewSimApp returns a reference to an initialized SimApp.
 func NewSimApp(
 	logger log.Logger, db dbm.DB, traceStore io.Writer, loadLatest bool, skipUpgradeHeights map[int64]bool,
-	homePath string, invCheckPeriod uint, encodingConfig simappparams.EncodingConfig,
+	homePath string, invCheckPeriod uint, encodingConfig simParams.EncodingConfig,
 	appOpts servertypes.AppOptions, baseAppOptions ...func(*baseapp.BaseApp),
 ) *SimApp {
 	appCodec := encodingConfig.Marshaler
