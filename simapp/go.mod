@@ -1,6 +1,6 @@
 module github.com/circlefin/noble-fiattokenfactory/simapp
 
-go 1.21
+go 1.20
 
 require (
 	github.com/circlefin/noble-fiattokenfactory v1.0.0
