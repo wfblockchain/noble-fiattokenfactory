@@ -3,7 +3,7 @@ package types
 import (
 	"testing"
 
-	"github.com/circlefin/noble-fiattokenfactory/testutil/sample"
+	"github.com/wfblockchain/noble-fiattokenfactory/testutil/sample"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 	"github.com/stretchr/testify/require"

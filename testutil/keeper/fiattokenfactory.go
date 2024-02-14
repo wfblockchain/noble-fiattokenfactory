@@ -3,8 +3,8 @@ package keeper
 import (
 	"testing"
 
-	"github.com/circlefin/noble-fiattokenfactory/x/fiattokenfactory/keeper"
-	"github.com/circlefin/noble-fiattokenfactory/x/fiattokenfactory/types"
+	"github.com/wfblockchain/noble-fiattokenfactory/x/fiattokenfactory/keeper"
+	"github.com/wfblockchain/noble-fiattokenfactory/x/fiattokenfactory/types"
 	"github.com/cosmos/cosmos-sdk/codec"
 	codectypes "github.com/cosmos/cosmos-sdk/codec/types"
 	"github.com/cosmos/cosmos-sdk/store"

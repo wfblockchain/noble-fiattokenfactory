@@ -4,16 +4,16 @@ import (
 	"strconv"
 	"testing"
 
-	"github.com/circlefin/noble-fiattokenfactory/testutil/sample"
+	"github.com/wfblockchain/noble-fiattokenfactory/testutil/sample"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/query"
 	"github.com/stretchr/testify/require"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 
-	keepertest "github.com/circlefin/noble-fiattokenfactory/testutil/keeper"
-	"github.com/circlefin/noble-fiattokenfactory/testutil/nullify"
-	"github.com/circlefin/noble-fiattokenfactory/x/fiattokenfactory/types"
+	keepertest "github.com/wfblockchain/noble-fiattokenfactory/testutil/keeper"
+	"github.com/wfblockchain/noble-fiattokenfactory/testutil/nullify"
+	"github.com/wfblockchain/noble-fiattokenfactory/x/fiattokenfactory/types"
 )
 
 // Prevent strconv unused error

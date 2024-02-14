@@ -4,11 +4,11 @@ import (
 	"strconv"
 	"testing"
 
-	keepertest "github.com/circlefin/noble-fiattokenfactory/testutil/keeper"
-	"github.com/circlefin/noble-fiattokenfactory/testutil/nullify"
-	"github.com/circlefin/noble-fiattokenfactory/testutil/sample"
-	"github.com/circlefin/noble-fiattokenfactory/x/fiattokenfactory/keeper"
-	"github.com/circlefin/noble-fiattokenfactory/x/fiattokenfactory/types"
+	keepertest "github.com/wfblockchain/noble-fiattokenfactory/testutil/keeper"
+	"github.com/wfblockchain/noble-fiattokenfactory/testutil/nullify"
+	"github.com/wfblockchain/noble-fiattokenfactory/testutil/sample"
+	"github.com/wfblockchain/noble-fiattokenfactory/x/fiattokenfactory/keeper"
+	"github.com/wfblockchain/noble-fiattokenfactory/x/fiattokenfactory/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/stretchr/testify/require"
 )

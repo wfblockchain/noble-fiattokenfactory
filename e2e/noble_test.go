@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/circlefin/noble-fiattokenfactory/x/fiattokenfactory/types"
+	"github.com/wfblockchain/noble-fiattokenfactory/x/fiattokenfactory/types"
 	"github.com/strangelove-ventures/interchaintest/v4"
 	"github.com/strangelove-ventures/interchaintest/v4/chain/cosmos"
 	"github.com/strangelove-ventures/interchaintest/v4/ibc"

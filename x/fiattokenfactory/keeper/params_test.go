@@ -3,8 +3,8 @@ package keeper_test
 import (
 	"testing"
 
-	testkeeper "github.com/circlefin/noble-fiattokenfactory/testutil/keeper"
-	"github.com/circlefin/noble-fiattokenfactory/x/fiattokenfactory/types"
+	testkeeper "github.com/wfblockchain/noble-fiattokenfactory/testutil/keeper"
+	"github.com/wfblockchain/noble-fiattokenfactory/x/fiattokenfactory/types"
 	"github.com/stretchr/testify/require"
 )
 

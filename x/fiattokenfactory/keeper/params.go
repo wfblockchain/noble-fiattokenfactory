@@ -1,7 +1,7 @@
 package keeper
 
 import (
-	"github.com/circlefin/noble-fiattokenfactory/x/fiattokenfactory/types"
+	"github.com/wfblockchain/noble-fiattokenfactory/x/fiattokenfactory/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 

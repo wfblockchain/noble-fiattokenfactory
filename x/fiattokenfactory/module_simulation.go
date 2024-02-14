@@ -3,13 +3,13 @@ package fiattokenfactory
 import (
 	"math/rand"
 
-	"github.com/circlefin/noble-fiattokenfactory/testutil/sample"
-	tokenfactorysimulation "github.com/circlefin/noble-fiattokenfactory/x/fiattokenfactory/simulation"
-	"github.com/circlefin/noble-fiattokenfactory/x/fiattokenfactory/types"
+	"github.com/wfblockchain/noble-fiattokenfactory/testutil/sample"
+	tokenfactorysimulation "github.com/wfblockchain/noble-fiattokenfactory/x/fiattokenfactory/simulation"
+	"github.com/wfblockchain/noble-fiattokenfactory/x/fiattokenfactory/types"
 	"github.com/cosmos/cosmos-sdk/baseapp"
-	simtestutil "github.com/cosmos/cosmos-sdk/testutil/sims"
-	paramstypes "github.com/cosmos/cosmos-sdk/x/params/types"
-	simcli "github.com/cosmos/cosmos-sdk/x/simulation/client/cli"
+	// simtestutil "github.com/cosmos/cosmos-sdk/testutil/sims"
+	// paramstypes "github.com/cosmos/cosmos-sdk/x/params/types"
+	// simcli "github.com/cosmos/cosmos-sdk/x/simulation/client/cli"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/module"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
@@ -22,9 +22,9 @@ import (
 var (
 	_ = sample.AccAddress
 	_ = tokenfactorysimulation.FindAccount
-	_ = simParams.StakePerAccount
 	_ = simulation.MsgEntryKind
 	_ = baseapp.Paramspace
+
 )
 
 const (
@@ -140,9 +140,9 @@ func (AppModule) ProposalContents(_ module.SimulationState) []simtypes.WeightedP
 }
 
 // RandomizedParams creates randomized  param changes for the simulator
-func (am AppModule) RandomizedParams(_ *rand.Rand) []simtypes.ParamChange {
-	return []simtypes.ParamChange{}
-}
+// func (am AppModule) RandomizedParams(_ *rand.Rand) []simtypes.ParamChange {
+// 	return []simtypes.ParamChange{}
+// }
 
 // RegisterStoreDecoder registers a decoder
 func (am AppModule) RegisterStoreDecoder(_ sdk.StoreDecoderRegistry) {}

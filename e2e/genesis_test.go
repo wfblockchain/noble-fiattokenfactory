@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	fiattokenfactorytypes "github.com/circlefin/noble-fiattokenfactory/x/fiattokenfactory/types"
+	fiattokenfactorytypes "github.com/wfblockchain/noble-fiattokenfactory/x/fiattokenfactory/types"
 	simtestutil "github.com/cosmos/cosmos-sdk/testutil/sims"
 	simcli "github.com/cosmos/cosmos-sdk/x/simulation/client/cli"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"

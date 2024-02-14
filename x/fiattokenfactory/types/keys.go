@@ -10,6 +10,8 @@ const (
 	// RouterKey defines the module's message routing key
 	RouterKey = StoreKey
 
+	DoneByte = 0x1
+	
 	// MemStoreKey defines the in-memory store key
 	MemStoreKey = "mem_" + StoreKey
 

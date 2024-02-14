@@ -3,8 +3,8 @@ package simulation
 import (
 	"math/rand"
 
-	"github.com/circlefin/noble-fiattokenfactory/x/fiattokenfactory/keeper"
-	"github.com/circlefin/noble-fiattokenfactory/x/fiattokenfactory/types"
+	"github.com/wfblockchain/noble-fiattokenfactory/x/fiattokenfactory/keeper"
+	"github.com/wfblockchain/noble-fiattokenfactory/x/fiattokenfactory/types"
 	"github.com/cosmos/cosmos-sdk/baseapp"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"

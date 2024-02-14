@@ -3,8 +3,8 @@ package types_test
 import (
 	"testing"
 
-	"github.com/circlefin/noble-fiattokenfactory/testutil/sample"
-	"github.com/circlefin/noble-fiattokenfactory/x/fiattokenfactory/types"
+	"github.com/wfblockchain/noble-fiattokenfactory/testutil/sample"
+	"github.com/wfblockchain/noble-fiattokenfactory/x/fiattokenfactory/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
 	"github.com/stretchr/testify/require"

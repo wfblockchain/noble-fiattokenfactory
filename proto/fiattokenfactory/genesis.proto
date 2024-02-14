@@ -13,7 +13,7 @@ import "fiattokenfactory/paused.proto";
 import "fiattokenfactory/pauser.proto";
 import "gogoproto/gogo.proto";
 
-option go_package = "github.com/circlefin/noble-fiattokenfactory/x/fiattokenfactory/types";
+option go_package = "github.com/wfblockchain/noble-fiattokenfactory/x/fiattokenfactory/types";
 
 // GenesisState defines the fiattokenfactory module's genesis state.
 message GenesisState {

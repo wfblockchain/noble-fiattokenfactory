@@ -1,14 +1,16 @@
-module github.com/circlefin/noble-fiattokenfactory/e2e
+module github.com/wfblockchain/noble-fiattokenfactory/e2e
 
 go 1.21
 
 require (
-	github.com/circlefin/noble-fiattokenfactory v1.0.0
-	github.com/cosmos/cosmos-sdk v0.45.16
+	github.com/wfblockchain/noble-fiattokenfactory v1.0.0
+	github.com/cosmos/cosmos-sdk v0.47.3
 	github.com/icza/dyno v0.0.0-20220812133438-f0b6f8a18845
 	github.com/strangelove-ventures/interchaintest/v4 v4.0.0-20231026153934-334934f17a68
 	github.com/stretchr/testify v1.8.4
 	go.uber.org/zap v1.24.0
+	github.com/cometbft/cometbft v0.37.1
+	github.com/cometbft/cometbft-db v0.7.0
 )
 
 require (
@@ -42,7 +44,7 @@ require (
 	github.com/cosmos/go-bip39 v1.0.0 // indirect
 	github.com/cosmos/gorocksdb v1.2.0 // indirect
 	github.com/cosmos/iavl v0.19.5 // indirect
-	github.com/cosmos/ibc-go/v4 v4.5.1 // indirect
+	github.com/cosmos/ibc-go/v7 v7.1.0-rc0 // indirect
 	github.com/cosmos/ledger-cosmos-go v0.12.2 // indirect
 	github.com/danieljoos/wincred v1.1.2 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
@@ -127,8 +129,8 @@ require (
 	github.com/subosito/gotenv v1.4.2 // indirect
 	github.com/syndtr/goleveldb v1.0.1-0.20220721030215-126854af5e6d // indirect
 	github.com/tendermint/go-amino v0.16.0 // indirect
-	github.com/tendermint/tendermint v0.34.27 // indirect
-	github.com/tendermint/tm-db v0.6.7 // indirect
+	github.com/cometbft/cometbft v0.37.1
+	github.com/cometbft/cometbft-db v0.7.0
 	github.com/tidwall/btree v1.5.0 // indirect
 	github.com/zondax/hid v0.9.1 // indirect
 	github.com/zondax/ledger-go v0.14.1 // indirect
@@ -169,7 +171,7 @@ replace (
 	github.com/ChainSafe/go-schnorrkel => github.com/ChainSafe/go-schnorrkel v0.0.0-20200405005733-88cbf1b4c40d
 
 	// use local version of circlefin/noble-fiattokenfactory
-	github.com/circlefin/noble-fiattokenfactory => ./..
+	github.com/wfblockchain/noble-fiattokenfactory => ./..
 
 	// use cosmos flavored gogo/protobuf
 	// https://github.com/cosmos/cosmos-sdk/issues/8469
@@ -178,6 +180,4 @@ replace (
 	// use cosmos compatible syndtr/goleveldb
 	github.com/syndtr/goleveldb => github.com/syndtr/goleveldb v1.0.1-0.20210819022825-2ae1ddf74ef7
 
-	// use cometbft
-	github.com/tendermint/tendermint => github.com/cometbft/cometbft v0.34.27
 )

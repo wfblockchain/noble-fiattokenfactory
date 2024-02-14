@@ -6,8 +6,8 @@ import (
 	"github.com/cosmos/cosmos-sdk/server"
 	svrcmd "github.com/cosmos/cosmos-sdk/server/cmd"
 
-	"github.com/circlefin/noble-fiattokenfactory/simapp"
-	"github.com/circlefin/noble-fiattokenfactory/simapp/simd/cmd"
+	"github.com/wfblockchain/noble-fiattokenfactory/simapp"
+	"github.com/wfblockchain/noble-fiattokenfactory/simapp/simd/cmd"
 )
 
 func main() {
