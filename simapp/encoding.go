@@ -3,12 +3,11 @@ package simapp
 import (
 	"github.com/cosmos/cosmos-sdk/std"
 
-	simtestutil "github.com/cosmos/cosmos-sdk/testutil/sims"
-	paramstypes "github.com/cosmos/cosmos-sdk/x/params/types"
-	simcli "github.com/cosmos/cosmos-sdk/x/simulation/client/cli"
-	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
+	// simtestutil "github.com/cosmos/cosmos-sdk/testutil/sims"
+	// paramstypes "github.com/cosmos/cosmos-sdk/x/params/types"
+	// simcli "github.com/cosmos/cosmos-sdk/x/simulation/client/cli"
+	// simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
 	simappparams "cosmossdk.io/simapp/params"
-
 )
 
 // MakeTestEncodingConfig creates an EncodingConfig for testing. This function
