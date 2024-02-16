@@ -614,7 +614,7 @@ func NewSimApp(
 	)
 
 	app.mm.RegisterInvariants(&app.CrisisKeeper)
-	app.mm.RegisterRoutes(app.Router(), app.QueryRouter(), encodingConfig.Amino)
+	app.mm.RegisterRoutes(app.Router(), app.GRPCQueryRouter(), encodingConfig.Amino)
 	app.configurator = module.NewConfigurator(app.appCodec, app.MsgServiceRouter(), app.GRPCQueryRouter())
 	app.mm.RegisterServices(app.configurator)
 
@@ -627,10 +627,8 @@ func NewSimApp(
 	// transactions
 	app.sm = module.NewSimulationManager(
 		auth.NewAppModule(appCodec, app.AccountKeeper, authsims.RandomGenesisAccounts, app.GetSubspace(authtypes.ModuleName)),
-		vesting.NewAppModule(app.AccountKeeper, app.BankKeeper),
 		bank.NewAppModule(appCodec, app.BankKeeper, app.AccountKeeper, app.GetSubspace(banktypes.ModuleName)),
 		capability.NewAppModule(appCodec, *app.CapabilityKeeper, false),
-		crisis.NewAppModule(&app.CrisisKeeper, skipGenesisInvariants, app.GetSubspace(crisistypes.ModuleName)),
 		feegrantmodule.NewAppModule(appCodec, app.AccountKeeper, app.BankKeeper, app.FeeGrantKeeper, app.interfaceRegistry),
 		gov.NewAppModule(appCodec, &app.GovKeeper, app.AccountKeeper, app.BankKeeper, app.GetSubspace(govtypes.ModuleName)),
 		mint.NewAppModule(appCodec, app.MintKeeper, app.AccountKeeper, nil, app.GetSubspace(minttypes.ModuleName)),
