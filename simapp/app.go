@@ -614,7 +614,7 @@ func NewSimApp(
 	)
 
 	app.mm.RegisterInvariants(&app.CrisisKeeper)
-	app.mm.RegisterRoutes(app.Router(), app.GRPCQueryRouter(), encodingConfig.Amino)
+	// app.mm.RegisterRoutes(app.Router(), app.GRPCQueryRouter(), encodingConfig.Amino)
 	app.configurator = module.NewConfigurator(app.appCodec, app.MsgServiceRouter(), app.GRPCQueryRouter())
 	app.mm.RegisterServices(app.configurator)
 
