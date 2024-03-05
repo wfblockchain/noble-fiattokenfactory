@@ -13,20 +13,20 @@ func init() {
 }
 
 func RegisterLegacyAminoCodec(cdc *codec.LegacyAmino) {
-	cdc.RegisterConcrete(&MsgUpdateMasterMinter{}, "fiattokenfactory/UpdateMasterMinter", nil)
-	cdc.RegisterConcrete(&MsgUpdatePauser{}, "fiattokenfactory/UpdatePauser", nil)
-	cdc.RegisterConcrete(&MsgUpdateBlacklister{}, "fiattokenfactory/UpdateBlacklister", nil)
-	cdc.RegisterConcrete(&MsgUpdateOwner{}, "fiattokenfactory/UpdateOwner", nil)
-	cdc.RegisterConcrete(&MsgConfigureMinter{}, "fiattokenfactory/ConfigureMinter", nil)
-	cdc.RegisterConcrete(&MsgRemoveMinter{}, "fiattokenfactory/RemoveMinter", nil)
-	cdc.RegisterConcrete(&MsgMint{}, "fiattokenfactory/Mint", nil)
-	cdc.RegisterConcrete(&MsgBurn{}, "fiattokenfactory/Burn", nil)
-	cdc.RegisterConcrete(&MsgBlacklist{}, "fiattokenfactory/Blacklist", nil)
-	cdc.RegisterConcrete(&MsgUnblacklist{}, "fiattokenfactory/Unblacklist", nil)
-	cdc.RegisterConcrete(&MsgPause{}, "fiattokenfactory/Pause", nil)
-	cdc.RegisterConcrete(&MsgUnpause{}, "fiattokenfactory/Unpause", nil)
-	cdc.RegisterConcrete(&MsgConfigureMinterController{}, "fiattokenfactory/ConfigureMinterController", nil)
-	cdc.RegisterConcrete(&MsgRemoveMinterController{}, "fiattokenfactory/RemoveMinterController", nil)
+	cdc.RegisterConcrete(&MsgUpdateMasterMinter{}, "fiattokenfactory-nobel/UpdateMasterMinter", nil)
+	cdc.RegisterConcrete(&MsgUpdatePauser{}, "fiattokenfactory-nobel/UpdatePauser", nil)
+	cdc.RegisterConcrete(&MsgUpdateBlacklister{}, "fiattokenfactory-nobel/UpdateBlacklister", nil)
+	cdc.RegisterConcrete(&MsgUpdateOwner{}, "fiattokenfactory-nobel/UpdateOwner", nil)
+	cdc.RegisterConcrete(&MsgConfigureMinter{}, "fiattokenfactory-nobel/ConfigureMinter", nil)
+	cdc.RegisterConcrete(&MsgRemoveMinter{}, "fiattokenfactory-nobel/RemoveMinter", nil)
+	cdc.RegisterConcrete(&MsgMint{}, "fiattokenfactory-nobel/Mint", nil)
+	cdc.RegisterConcrete(&MsgBurn{}, "fiattokenfactory-nobel/Burn", nil)
+	cdc.RegisterConcrete(&MsgBlacklist{}, "fiattokenfactory-nobel/Blacklist", nil)
+	cdc.RegisterConcrete(&MsgUnblacklist{}, "fiattokenfactory-nobel/Unblacklist", nil)
+	cdc.RegisterConcrete(&MsgPause{}, "fiattokenfactory-nobel/Pause", nil)
+	cdc.RegisterConcrete(&MsgUnpause{}, "fiattokenfactory-nobel/Unpause", nil)
+	cdc.RegisterConcrete(&MsgConfigureMinterController{}, "fiattokenfactory-nobel/ConfigureMinterController", nil)
+	cdc.RegisterConcrete(&MsgRemoveMinterController{}, "fiattokenfactory-nobel/RemoveMinterController", nil)
 }
 
 func RegisterInterfaces(registry cdctypes.InterfaceRegistry) {
