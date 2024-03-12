@@ -1,5 +1,5 @@
 syntax = "proto3";
-package noble.fiattokenfactory;
+package fiattokenfactory;
 
 import "fiattokenfactory/blacklisted.proto";
 import "fiattokenfactory/blacklister.proto";
