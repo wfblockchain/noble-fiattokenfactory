@@ -3,6 +3,7 @@ package types
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
+	errors "github.com/pkg/errors"
 )
 
 const TypeMsgRemoveMinterController = "remove_minter_controller"
@@ -40,11 +41,11 @@ func (msg *MsgRemoveMinterController) GetSignBytes() []byte {
 func (msg *MsgRemoveMinterController) ValidateBasic() error {
 	_, err := sdk.AccAddressFromBech32(msg.From)
 	if err != nil {
-		return sdkerrors.Wrapf(sdkerrors.ErrInvalidAddress, "invalid from address (%s)", err)
+		return errors.Wrapf(sdkerrors.ErrInvalidAddress, "invalid from address (%s)", err)
 	}
 	_, err = sdk.AccAddressFromBech32(msg.Controller)
 	if err != nil {
-		return sdkerrors.Wrapf(sdkerrors.ErrInvalidAddress, "invalid minter controller address (%s)", err)
+		return errors.Wrapf(sdkerrors.ErrInvalidAddress, "invalid minter controller address (%s)", err)
 	}
 	return nil
 }

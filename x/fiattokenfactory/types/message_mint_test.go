@@ -3,10 +3,11 @@ package types
 import (
 	"testing"
 
-	"github.com/wfblockchain/noble-fiattokenfactory/testutil/sample"
+	sdkmath "cosmossdk.io/math"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 	"github.com/stretchr/testify/require"
+	"github.com/wfblockchain/noble-fiattokenfactory/testutil/sample"
 )
 
 func TestMsgMint_ValidateBasic(t *testing.T) {
@@ -36,7 +37,7 @@ func TestMsgMint_ValidateBasic(t *testing.T) {
 			msg: MsgMint{
 				From:    sample.AccAddress(),
 				Address: sample.AccAddress(),
-				Amount:  sdk.NewCoin("test", sdk.NewInt(1)),
+				Amount:  sdk.NewCoin("test", sdkmath.NewInt(1)),
 			},
 		},
 	}

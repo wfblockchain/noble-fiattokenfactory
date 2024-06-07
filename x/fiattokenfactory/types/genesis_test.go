@@ -3,10 +3,11 @@ package types_test
 import (
 	"testing"
 
+	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/wfblockchain/noble-fiattokenfactory/testutil/sample"
 	"github.com/wfblockchain/noble-fiattokenfactory/x/fiattokenfactory/types"
-	sdk "github.com/cosmos/cosmos-sdk/types"
 
+	sdkmath "cosmossdk.io/math"
 	"github.com/stretchr/testify/require"
 )
 
@@ -43,11 +44,11 @@ func TestGenesisState_Validate(t *testing.T) {
 				MintersList: []types.Minters{
 					{
 						Address:   sample.AccAddress(),
-						Allowance: sdk.NewCoin("test", sdk.NewInt(1)),
+						Allowance: sdk.NewCoin("test", sdkmath.NewInt(1)),
 					},
 					{
 						Address:   sample.AccAddress(),
-						Allowance: sdk.NewCoin("test", sdk.NewInt(1)),
+						Allowance: sdk.NewCoin("test", sdkmath.NewInt(1)),
 					},
 				},
 				Pauser: &types.Pauser{
@@ -95,11 +96,11 @@ func TestGenesisState_Validate(t *testing.T) {
 				MintersList: []types.Minters{
 					{
 						Address:   sample.AccAddress(),
-						Allowance: sdk.NewCoin("test", sdk.NewInt(1)),
+						Allowance: sdk.NewCoin("test", sdkmath.NewInt(1)),
 					},
 					{
 						Address:   sample.AccAddress(),
-						Allowance: sdk.NewCoin("test", sdk.NewInt(1)),
+						Allowance: sdk.NewCoin("test", sdkmath.NewInt(1)),
 					},
 				},
 				Pauser: &types.Pauser{

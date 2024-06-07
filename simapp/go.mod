@@ -3,20 +3,21 @@ module github.com/wfblockchain/noble-fiattokenfactory/simapp
 go 1.21
 
 require (
-	cosmossdk.io/math v1.0.1
-	cosmossdk.io/simapp v0.0.0-20230602123434-616841b9704d
+    cosmossdk.io/simapp v0.0.0-20230602123434-616841b9704d
+	cosmossdk.io/math v1.3.0
 	cosmossdk.io/tools/rosetta v0.2.1
-	github.com/cometbft/cometbft v0.37.2
-	github.com/cometbft/cometbft-db v0.8.0
-	github.com/cosmos/cosmos-sdk v0.47.3
-	github.com/cosmos/ibc-go/v7 v7.1.0-rc0
+	cosmossdk.io/x/upgrade v0.1.3
+	github.com/cometbft/cometbft v0.38.7
+	github.com/cometbft/cometbft-db v0.9.1
+	github.com/cosmos/cosmos-sdk v0.50.7
+	github.com/cosmos/ibc-go/v8 v8.3.1
 	github.com/gorilla/mux v1.8.0
 	github.com/rakyll/statik v0.1.7
-	github.com/spf13/cast v1.5.1
-	github.com/spf13/cobra v1.7.0
+	github.com/spf13/cast v1.6.0
+	github.com/spf13/cobra v1.8.0
 	github.com/spf13/pflag v1.0.5
-	github.com/spf13/viper v1.16.0
-	github.com/wfblockchain/noble-fiattokenfactory v0.0.0-20240218134203-7961fc6ca5b0
+	github.com/spf13/viper v1.18.2
+	github.com/wfblockchain/noble-fiattokenfactory v1.0.0
 )
 
 require (
@@ -25,7 +26,7 @@ require (
 	cloud.google.com/go/compute/metadata v0.2.3 // indirect
 	cloud.google.com/go/iam v1.1.0 // indirect
 	cloud.google.com/go/storage v1.30.1 // indirect
-	cosmossdk.io/api v0.3.1 // indirect
+	cosmossdk.io/api v0.7.5 // indirect
 	cosmossdk.io/core v0.5.1 // indirect
 	cosmossdk.io/depinject v1.0.0-alpha.4 // indirect
 	cosmossdk.io/errors v1.0.0 // indirect
@@ -180,6 +181,8 @@ replace (
 	// use cosmos compatible ChainSafe/go-schnorrkel
 	github.com/ChainSafe/go-schnorrkel => github.com/ChainSafe/go-schnorrkel v0.0.0-20200405005733-88cbf1b4c40d
 
+	github.com/ChainSafe/go-schnorrkel/1 => github.com/ChainSafe/go-schnorrkel v1.0.0
+
 	// use cosmos flavored gogo/protobuf
 	// https://github.com/cosmos/cosmos-sdk/issues/8469
 	github.com/gogo/protobuf => github.com/regen-network/protobuf v1.3.3-alpha.regen.1
@@ -190,8 +193,10 @@ replace (
 	// use local version of circlefin/noble-fiattokenfactory
 	github.com/wfblockchain/noble-fiattokenfactory => ./..
 
+	github.com/cosmos/cosmos-sdk => github.com/cosmos/cosmos-sdk v0.50.7
+
 	// use cometbft
 
 	// use cosmos compatible google.golang.org/grpc
-	google.golang.org/grpc => google.golang.org/grpc v1.55.0
+	
 )

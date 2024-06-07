@@ -5,17 +5,14 @@ import (
 	"encoding/json"
 	"fmt"
 
-	fiattokenfactorytypes "github.com/wfblockchain/noble-fiattokenfactory/x/fiattokenfactory/types"
-	simtestutil "github.com/cosmos/cosmos-sdk/testutil/sims"
-	simcli "github.com/cosmos/cosmos-sdk/x/simulation/client/cli"
-	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
+	math "cosmossdk.io/math"
 	"github.com/cosmos/cosmos-sdk/types"
 	"github.com/icza/dyno"
-	"github.com/strangelove-ventures/interchaintest/v4"
-	"github.com/strangelove-ventures/interchaintest/v4/chain/cosmos"
-	"github.com/strangelove-ventures/interchaintest/v4/ibc"
-	"github.com/strangelove-ventures/interchaintest/v4/relayer"
-	"github.com/strangelove-ventures/interchaintest/v4/relayer/rly"
+	"github.com/strangelove-ventures/interchaintest/v8"
+	"github.com/strangelove-ventures/interchaintest/v8/chain/cosmos"
+	"github.com/strangelove-ventures/interchaintest/v8/ibc"
+	"github.com/strangelove-ventures/interchaintest/v8/relayer"
+	"github.com/strangelove-ventures/interchaintest/v8/relayer/rly"
 )
 
 var nobleImageInfo = []ibc.DockerImage{
@@ -173,13 +170,13 @@ type Attester struct {
 	Attester string `json:"attester"`
 }
 
-func NobleEncoding() *simParams.EncodingConfig {
-	cfg := cosmos.DefaultEncoding()
+// func NobleEncoding() *simParams.EncodingConfig {
+// 	cfg := cosmos.DefaultEncoding()
 
-	fiattokenfactorytypes.RegisterInterfaces(cfg.InterfaceRegistry)
+// 	fiattokenfactorytypes.RegisterInterfaces(cfg.InterfaceRegistry)
 
-	return &cfg
-}
+// 	return &cfg
+// }
 
 type ExtraWallets struct {
 	User  ibc.Wallet
@@ -220,9 +217,9 @@ func createTokenfactoryRoles(ctx context.Context, denomMetadata DenomMetadata, v
 	genesisWallet := ibc.WalletAmount{
 		Address: nobleRoles.Owner.FormattedAddress(),
 		Denom:   chainCfg.Denom,
-		Amount:  0,
+		Amount:  math.NewInt(0),
 	}
-	err = val.AddGenesisAccount(ctx, genesisWallet.Address, []types.Coin{types.NewCoin(genesisWallet.Denom, types.NewIntFromUint64(uint64(genesisWallet.Amount)))})
+	err = val.AddGenesisAccount(ctx, genesisWallet.Address, []types.Coin{types.NewCoin(genesisWallet.Denom, genesisWallet.Amount)})
 	if err != nil {
 		return NobleRoles{}, err
 	}
@@ -270,42 +267,42 @@ func createTokenfactoryRoles(ctx context.Context, denomMetadata DenomMetadata, v
 		{
 			Address: nobleRoles.Owner2.FormattedAddress(),
 			Denom:   chainCfg.Denom,
-			Amount:  0,
+			Amount:  math.NewInt(0),
 		},
 		{
 			Address: nobleRoles.MasterMinter.FormattedAddress(),
 			Denom:   chainCfg.Denom,
-			Amount:  0,
+			Amount:  math.NewInt(0),
 		},
 		{
 			Address: nobleRoles.MinterController.FormattedAddress(),
 			Denom:   chainCfg.Denom,
-			Amount:  0,
+			Amount:  math.NewInt(0),
 		},
 		{
 			Address: nobleRoles.MinterController2.FormattedAddress(),
 			Denom:   chainCfg.Denom,
-			Amount:  0,
+			Amount:  math.NewInt(0),
 		},
 		{
 			Address: nobleRoles.Minter.FormattedAddress(),
 			Denom:   chainCfg.Denom,
-			Amount:  0,
+			Amount:  math.NewInt(0),
 		},
 		{
 			Address: nobleRoles.Blacklister.FormattedAddress(),
 			Denom:   chainCfg.Denom,
-			Amount:  0,
+			Amount:  math.NewInt(0),
 		},
 		{
 			Address: nobleRoles.Pauser.FormattedAddress(),
 			Denom:   chainCfg.Denom,
-			Amount:  0,
+			Amount:  math.NewInt(0),
 		},
 	}
 
 	for _, wallet := range genesisWallets {
-		err = val.AddGenesisAccount(ctx, wallet.Address, []types.Coin{types.NewCoin(wallet.Denom, types.NewIntFromUint64(uint64(wallet.Amount)))})
+		err = val.AddGenesisAccount(ctx, wallet.Address, []types.Coin{types.NewCoin(wallet.Denom, genesisWallet.Amount)})
 		if err != nil {
 			return NobleRoles{}, err
 		}
@@ -327,10 +324,10 @@ func createParamAuthAtGenesis(ctx context.Context, val *cosmos.ChainNode) (ibc.W
 	genesisWallet := ibc.WalletAmount{
 		Address: wallet.FormattedAddress(),
 		Denom:   chainCfg.Denom,
-		Amount:  0,
+		Amount:  math.NewInt(0),
 	}
 
-	err = val.AddGenesisAccount(ctx, genesisWallet.Address, []types.Coin{types.NewCoin(genesisWallet.Denom, types.NewIntFromUint64(uint64(genesisWallet.Amount)))})
+	err = val.AddGenesisAccount(ctx, genesisWallet.Address, []types.Coin{types.NewCoin(genesisWallet.Denom, genesisWallet.Amount)})
 	if err != nil {
 		return nil, err
 	}
@@ -371,22 +368,24 @@ func createExtraWalletsAtGenesis(ctx context.Context, val *cosmos.ChainNode) (Ex
 		{
 			Address: extraWallets.User.FormattedAddress(),
 			Denom:   chainCfg.Denom,
-			Amount:  0,
+			Amount:  math.NewInt(0),
 		},
 		{
 			Address: extraWallets.User2.FormattedAddress(),
 			Denom:   chainCfg.Denom,
-			Amount:  10_000,
+			Amount:  math.NewInt(10_000),
 		},
 		{
 			Address: extraWallets.Alice.FormattedAddress(),
 			Denom:   chainCfg.Denom,
-			Amount:  0,
+			Amount:  math.NewInt(0),
 		},
 	}
 
 	for _, wallet := range genesisWallets {
-		err = val.AddGenesisAccount(ctx, wallet.Address, []types.Coin{types.NewCoin(wallet.Denom, types.NewIntFromUint64(uint64(wallet.Amount)))})
+		err := val.AddGenesisAccount(ctx, wallet.Address, []types.Coin{
+			types.NewCoin(wallet.Denom, wallet.Amount),
+		})
 		if err != nil {
 			return ExtraWallets{}, err
 		}
@@ -426,7 +425,6 @@ func nobleChainSpec(
 			TrustingPeriod: "504h",
 			NoHostMount:    false,
 			Images:         nobleImageInfo,
-			EncodingConfig: NobleEncoding(),
 			PreGenesis:     preGenesisAll(ctx, gw, minSetupFiatTf),
 			ModifyGenesis:  modifyGenesisAll(gw, minModifyFiatTf),
 		},

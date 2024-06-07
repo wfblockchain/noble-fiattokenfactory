@@ -1,9 +1,10 @@
 package keeper
 
 import (
-	"github.com/wfblockchain/noble-fiattokenfactory/x/fiattokenfactory/types"
-	"github.com/cosmos/cosmos-sdk/store/prefix"
+	"cosmossdk.io/store/prefix"
+	sdktypes "cosmossdk.io/store/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
+	"github.com/wfblockchain/noble-fiattokenfactory/x/fiattokenfactory/types"
 )
 
 // SetMinters set a specific minters in the store from its index
@@ -47,7 +48,7 @@ func (k Keeper) RemoveMinters(
 // GetAllMinters returns all minters
 func (k Keeper) GetAllMinters(ctx sdk.Context) (list []types.Minters) {
 	store := prefix.NewStore(ctx.KVStore(k.storeKey), types.KeyPrefix(types.MintersKeyPrefix))
-	iterator := sdk.KVStorePrefixIterator(store, []byte{})
+	iterator := sdktypes.KVStorePrefixIterator(store, []byte{})
 
 	defer iterator.Close()
 

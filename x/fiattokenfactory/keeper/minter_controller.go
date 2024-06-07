@@ -3,7 +3,8 @@ package keeper
 import (
 	"github.com/wfblockchain/noble-fiattokenfactory/x/fiattokenfactory/types"
 
-	"github.com/cosmos/cosmos-sdk/store/prefix"
+	"cosmossdk.io/store/prefix"
+	sdktypes "cosmossdk.io/store/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 
@@ -48,7 +49,7 @@ func (k Keeper) DeleteMinterController(
 // GetAllMinterController returns all minterController
 func (k Keeper) GetAllMinterControllers(ctx sdk.Context) (list []types.MinterController) {
 	store := prefix.NewStore(ctx.KVStore(k.storeKey), types.KeyPrefix(types.MinterControllerKeyPrefix))
-	iterator := sdk.KVStorePrefixIterator(store, []byte{})
+	iterator := sdktypes.KVStorePrefixIterator(store, []byte{})
 
 	defer iterator.Close()
 

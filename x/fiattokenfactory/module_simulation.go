@@ -3,15 +3,16 @@ package fiattokenfactory
 import (
 	"math/rand"
 
+	"github.com/cosmos/cosmos-sdk/baseapp"
 	"github.com/wfblockchain/noble-fiattokenfactory/testutil/sample"
 	tokenfactorysimulation "github.com/wfblockchain/noble-fiattokenfactory/x/fiattokenfactory/simulation"
 	"github.com/wfblockchain/noble-fiattokenfactory/x/fiattokenfactory/types"
-	"github.com/cosmos/cosmos-sdk/baseapp"
+
 	// simtestutil "github.com/cosmos/cosmos-sdk/testutil/sims"
 	// paramstypes "github.com/cosmos/cosmos-sdk/x/params/types"
 	// simcli "github.com/cosmos/cosmos-sdk/x/simulation/client/cli"
-	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/module"
+	sdk "github.com/cosmos/cosmos-sdk/types/simulation"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
@@ -24,7 +25,6 @@ var (
 	_ = tokenfactorysimulation.FindAccount
 	_ = simulation.MsgEntryKind
 	_ = baseapp.Paramspace
-
 )
 
 const (
@@ -152,7 +152,7 @@ func (am AppModule) WeightedOperations(simState module.SimulationState) []simtyp
 	operations := make([]simtypes.WeightedOperation, 0)
 
 	var weightMsgUpdateMasterMinter int
-	simState.AppParams.GetOrGenerate(simState.Cdc, opWeightMsgUpdateMasterMinter, &weightMsgUpdateMasterMinter, nil,
+	simState.AppParams.GetOrGenerate(opWeightMsgUpdateMasterMinter, &weightMsgUpdateMasterMinter, nil,
 		func(_ *rand.Rand) {
 			weightMsgUpdateMasterMinter = defaultWeightMsgUpdateMasterMinter
 		},
@@ -163,7 +163,7 @@ func (am AppModule) WeightedOperations(simState module.SimulationState) []simtyp
 	))
 
 	var weightMsgUpdatePauser int
-	simState.AppParams.GetOrGenerate(simState.Cdc, opWeightMsgUpdatePauser, &weightMsgUpdatePauser, nil,
+	simState.AppParams.GetOrGenerate(opWeightMsgUpdatePauser, &weightMsgUpdatePauser, nil,
 		func(_ *rand.Rand) {
 			weightMsgUpdatePauser = defaultWeightMsgUpdatePauser
 		},
@@ -174,7 +174,7 @@ func (am AppModule) WeightedOperations(simState module.SimulationState) []simtyp
 	))
 
 	var weightMsgUpdateBlacklister int
-	simState.AppParams.GetOrGenerate(simState.Cdc, opWeightMsgUpdateBlacklister, &weightMsgUpdateBlacklister, nil,
+	simState.AppParams.GetOrGenerate(opWeightMsgUpdateBlacklister, &weightMsgUpdateBlacklister, nil,
 		func(_ *rand.Rand) {
 			weightMsgUpdateBlacklister = defaultWeightMsgUpdateBlacklister
 		},
@@ -185,7 +185,7 @@ func (am AppModule) WeightedOperations(simState module.SimulationState) []simtyp
 	))
 
 	var weightMsgUpdateOwner int
-	simState.AppParams.GetOrGenerate(simState.Cdc, opWeightMsgUpdateOwner, &weightMsgUpdateOwner, nil,
+	simState.AppParams.GetOrGenerate(opWeightMsgUpdateOwner, &weightMsgUpdateOwner, nil,
 		func(_ *rand.Rand) {
 			weightMsgUpdateOwner = defaultWeightMsgUpdateOwner
 		},
@@ -196,7 +196,7 @@ func (am AppModule) WeightedOperations(simState module.SimulationState) []simtyp
 	))
 
 	var weightMsgConfigureMinter int
-	simState.AppParams.GetOrGenerate(simState.Cdc, opWeightMsgConfigureMinter, &weightMsgConfigureMinter, nil,
+	simState.AppParams.GetOrGenerate(opWeightMsgConfigureMinter, &weightMsgConfigureMinter, nil,
 		func(_ *rand.Rand) {
 			weightMsgConfigureMinter = defaultWeightMsgConfigureMinter
 		},
@@ -207,7 +207,7 @@ func (am AppModule) WeightedOperations(simState module.SimulationState) []simtyp
 	))
 
 	var weightMsgRemoveMinter int
-	simState.AppParams.GetOrGenerate(simState.Cdc, opWeightMsgRemoveMinter, &weightMsgRemoveMinter, nil,
+	simState.AppParams.GetOrGenerate(opWeightMsgRemoveMinter, &weightMsgRemoveMinter, nil,
 		func(_ *rand.Rand) {
 			weightMsgRemoveMinter = defaultWeightMsgRemoveMinter
 		},
@@ -218,7 +218,7 @@ func (am AppModule) WeightedOperations(simState module.SimulationState) []simtyp
 	))
 
 	var weightMsgMint int
-	simState.AppParams.GetOrGenerate(simState.Cdc, opWeightMsgMint, &weightMsgMint, nil,
+	simState.AppParams.GetOrGenerate(opWeightMsgMint, &weightMsgMint, nil,
 		func(_ *rand.Rand) {
 			weightMsgMint = defaultWeightMsgMint
 		},
@@ -229,7 +229,7 @@ func (am AppModule) WeightedOperations(simState module.SimulationState) []simtyp
 	))
 
 	var weightMsgBurn int
-	simState.AppParams.GetOrGenerate(simState.Cdc, opWeightMsgBurn, &weightMsgBurn, nil,
+	simState.AppParams.GetOrGenerate(opWeightMsgBurn, &weightMsgBurn, nil,
 		func(_ *rand.Rand) {
 			weightMsgBurn = defaultWeightMsgBurn
 		},
@@ -240,7 +240,7 @@ func (am AppModule) WeightedOperations(simState module.SimulationState) []simtyp
 	))
 
 	var weightMsgBlacklist int
-	simState.AppParams.GetOrGenerate(simState.Cdc, opWeightMsgBlacklist, &weightMsgBlacklist, nil,
+	simState.AppParams.GetOrGenerate(opWeightMsgBlacklist, &weightMsgBlacklist, nil,
 		func(_ *rand.Rand) {
 			weightMsgBlacklist = defaultWeightMsgBlacklist
 		},
@@ -251,7 +251,7 @@ func (am AppModule) WeightedOperations(simState module.SimulationState) []simtyp
 	))
 
 	var weightMsgUnblacklist int
-	simState.AppParams.GetOrGenerate(simState.Cdc, opWeightMsgUnblacklist, &weightMsgUnblacklist, nil,
+	simState.AppParams.GetOrGenerate(opWeightMsgUnblacklist, &weightMsgUnblacklist, nil,
 		func(_ *rand.Rand) {
 			weightMsgUnblacklist = defaultWeightMsgUnblacklist
 		},
@@ -262,7 +262,7 @@ func (am AppModule) WeightedOperations(simState module.SimulationState) []simtyp
 	))
 
 	var weightMsgPause int
-	simState.AppParams.GetOrGenerate(simState.Cdc, opWeightMsgPause, &weightMsgPause, nil,
+	simState.AppParams.GetOrGenerate(opWeightMsgPause, &weightMsgPause, nil,
 		func(_ *rand.Rand) {
 			weightMsgPause = defaultWeightMsgPause
 		},
@@ -273,7 +273,7 @@ func (am AppModule) WeightedOperations(simState module.SimulationState) []simtyp
 	))
 
 	var weightMsgUnpause int
-	simState.AppParams.GetOrGenerate(simState.Cdc, opWeightMsgUnpause, &weightMsgUnpause, nil,
+	simState.AppParams.GetOrGenerate(opWeightMsgUnpause, &weightMsgUnpause, nil,
 		func(_ *rand.Rand) {
 			weightMsgUnpause = defaultWeightMsgUnpause
 		},
@@ -284,7 +284,7 @@ func (am AppModule) WeightedOperations(simState module.SimulationState) []simtyp
 	))
 
 	var weightMsgConfigureMinterController int
-	simState.AppParams.GetOrGenerate(simState.Cdc, opWeightMsgConfigureMinterController, &weightMsgConfigureMinterController, nil,
+	simState.AppParams.GetOrGenerate(opWeightMsgConfigureMinterController, &weightMsgConfigureMinterController, nil,
 		func(_ *rand.Rand) {
 			weightMsgConfigureMinterController = defaultWeightMsgConfigureMinterController
 		},
@@ -295,7 +295,7 @@ func (am AppModule) WeightedOperations(simState module.SimulationState) []simtyp
 	))
 
 	var weightMsgRemoveMinterController int
-	simState.AppParams.GetOrGenerate(simState.Cdc, opWeightMsgRemoveMinterController, &weightMsgRemoveMinterController, nil,
+	simState.AppParams.GetOrGenerate(opWeightMsgRemoveMinterController, &weightMsgRemoveMinterController, nil,
 		func(_ *rand.Rand) {
 			weightMsgRemoveMinterController = defaultWeightMsgRemoveMinterController
 		},

@@ -5,12 +5,14 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/wfblockchain/noble-fiattokenfactory/x/fiattokenfactory/types"
-	"github.com/strangelove-ventures/interchaintest/v4"
-	"github.com/strangelove-ventures/interchaintest/v4/chain/cosmos"
-	"github.com/strangelove-ventures/interchaintest/v4/ibc"
-	"github.com/strangelove-ventures/interchaintest/v4/testreporter"
+	"cosmossdk.io/math"
+
+	"github.com/strangelove-ventures/interchaintest/v8"
+	"github.com/strangelove-ventures/interchaintest/v8/chain/cosmos"
+	"github.com/strangelove-ventures/interchaintest/v8/ibc"
+	"github.com/strangelove-ventures/interchaintest/v8/testreporter"
 	"github.com/stretchr/testify/require"
+	"github.com/wfblockchain/noble-fiattokenfactory/x/fiattokenfactory/types"
 	"go.uber.org/zap/zaptest"
 )
 
@@ -142,10 +144,10 @@ func nobleTokenfactory_e2e(t *testing.T, ctx context.Context, tokenfactoryModNam
 	)
 	require.NoError(t, err, "failed to execute mint to user2 tx")
 
-	err = nobleValidator.SendFunds(ctx, extraWallets.User2.KeyName(), ibc.WalletAmount{
+	err = nobleValidator.BankSend(ctx, extraWallets.User2.KeyName(), ibc.WalletAmount{
 		Address: extraWallets.User.FormattedAddress(),
 		Denom:   mintingDenom,
-		Amount:  50,
+		Amount:  math.NewInt(50),
 	})
 	require.Error(t, err, "The tx to a blacklisted user should not have been successful")
 
@@ -153,10 +155,10 @@ func nobleTokenfactory_e2e(t *testing.T, ctx context.Context, tokenfactoryModNam
 	require.NoError(t, err, "failed to get user balance")
 	require.Equal(t, int64(100), userBalance, "user balance should not have incremented while blacklisted")
 
-	err = nobleValidator.SendFunds(ctx, extraWallets.User2.KeyName(), ibc.WalletAmount{
+	err = nobleValidator.BankSend(ctx, extraWallets.User2.KeyName(), ibc.WalletAmount{
 		Address: extraWallets.User.FormattedAddress(),
 		Denom:   "token",
-		Amount:  100,
+		Amount:  math.NewInt(100),
 	})
 	require.NoError(t, err, "The tx should have been successfull as that is no the minting denom")
 

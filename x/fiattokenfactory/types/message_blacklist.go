@@ -3,6 +3,7 @@ package types
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
+	errors "github.com/pkg/errors"
 )
 
 const TypeMsgBlacklist = "blacklist"
@@ -40,11 +41,11 @@ func (msg *MsgBlacklist) GetSignBytes() []byte {
 func (msg *MsgBlacklist) ValidateBasic() error {
 	_, err := sdk.AccAddressFromBech32(msg.From)
 	if err != nil {
-		return sdkerrors.Wrapf(sdkerrors.ErrInvalidAddress, "invalid from address (%s)", err)
+		return errors.Wrapf(sdkerrors.ErrInvalidAddress, "invalid from address (%s)", err)
 	}
 
 	if len(msg.Address) <= 0 {
-		return sdkerrors.Wrap(sdkerrors.ErrInvalidAddress, "address length cannot be less than or equal to 0")
+		return errors.Wrap(sdkerrors.ErrInvalidAddress, "address length cannot be less than or equal to 0")
 	}
 	return nil
 }
