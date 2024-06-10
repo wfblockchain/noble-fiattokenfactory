@@ -13,8 +13,8 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 
-	"cosmossdk.io/simapp"
 	"cosmossdk.io/simapp/params"
+	"github.com/wfblockchain/noble-fiattokenfactory/simapp"
 
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/client/config"
@@ -36,7 +36,7 @@ import (
 	genutilcli "github.com/cosmos/cosmos-sdk/x/genutil/client/cli"
 )
 
-//"cosmossdk.io/simapp"
+// "cosmossdk.io/simapp"
 // "github.com/wfblockchain/noble-fiattokenfactory/simapp"
 // NewRootCmd creates a new root command for simd. It is called once in the
 // main function.

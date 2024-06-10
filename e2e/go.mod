@@ -26,7 +26,7 @@ require (
 	cosmossdk.io/x/evidence v0.1.0 // indirect
 	cosmossdk.io/x/feegrant v0.1.0 // indirect
 	cosmossdk.io/x/tx v0.13.3 // indirect
-	cosmossdk.io/x/upgrade v0.1.2 // indirect
+	cosmossdk.io/x/upgrade v0.1.3 // indirect
 	github.com/ChainSafe/go-schnorrkel/1 v0.0.0-00010101000000-000000000000 // indirect
 	github.com/ComposableFi/go-subkey/v2 v2.0.0-tm03420 // indirect
 	github.com/DataDog/datadog-go v3.2.0+incompatible // indirect
