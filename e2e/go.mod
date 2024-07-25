@@ -8,7 +8,7 @@ require (
 	github.com/cosmos/cosmos-sdk v0.50.7
 	github.com/icza/dyno v0.0.0-20220812133438-f0b6f8a18845
 	github.com/stretchr/testify v1.9.0
-	github.com/wfblockchain/noble-fiattokenfactory v1.0.0
+	github.com/wfblockchain/noble-fiattokenfactory v0.0.0-20240618083039-fef1b1aaf1b5
 	go.uber.org/zap v1.27.0
 )
 
@@ -263,17 +263,17 @@ require (
 
 replace (
 	github.com/ChainSafe/go-schnorrkel => github.com/ChainSafe/go-schnorrkel v0.0.0-20200405005733-88cbf1b4c40d
-	// use cosmos compatible ChainSafe/go-schnorrkel
+	// // use cosmos compatible ChainSafe/go-schnorrkel
 	github.com/ChainSafe/go-schnorrkel/1 => github.com/ChainSafe/go-schnorrkel v1.0.0
 
 	// use cosmos flavored gogo/protobuf
 	// https://github.com/cosmos/cosmos-sdk/issues/8469
-	github.com/gogo/protobuf => github.com/regen-network/protobuf v1.3.3-alpha.regen.1
+	github.com/gogo/protobuf => github.com/gogo/protobuf v1.3.2
 
-	// use cosmos compatible syndtr/goleveldb
-	github.com/syndtr/goleveldb => github.com/syndtr/goleveldb v1.0.1-0.20210819022825-2ae1ddf74ef7
+// use cosmos compatible syndtr/goleveldb
+// github.com/syndtr/goleveldb => github.com/syndtr/goleveldb v1.0.1-0.20210819022825-2ae1ddf74ef7
 
-	// use local version of circlefin/noble-fiattokenfactory
-	github.com/wfblockchain/noble-fiattokenfactory => ./..
+// // use local version of circlefin/noble-fiattokenfactory
+// github.com/wfblockchain/noble-fiattokenfactory => ./..
 
 )
