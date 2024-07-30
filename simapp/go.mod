@@ -211,7 +211,7 @@ require (
 )
 
 replace (
-	cosmossdk.io/simapp => ../../Documents/simapp
+	cosmossdk.io/simapp => ../../cosmos-sdk/simapp
 	// use cosmos compatible ChainSafe/go-schnorrkel
 	// github.com/ChainSafe/go-schnorrkel => github.com/ChainSafe/go-schnorrkel v0.0.0-20200405005733-88cbf1b4c40d
 
