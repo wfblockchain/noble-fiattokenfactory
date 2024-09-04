@@ -29,6 +29,7 @@ service Msg {
 }
 
 message MsgUpdateMasterMinter {
+  option (cosmos.msg.v1.signer) = "from";
   string from = 1;
   string address = 2;
 }
@@ -36,6 +37,7 @@ message MsgUpdateMasterMinter {
 message MsgUpdateMasterMinterResponse {}
 
 message MsgUpdatePauser {
+  option (cosmos.msg.v1.signer) = "from";
   string from = 1;
   string address = 2;
 }
@@ -43,6 +45,7 @@ message MsgUpdatePauser {
 message MsgUpdatePauserResponse {}
 
 message MsgUpdateBlacklister {
+  option (cosmos.msg.v1.signer) = "from";
   string from = 1;
   string address = 2;
 }
@@ -50,6 +53,7 @@ message MsgUpdateBlacklister {
 message MsgUpdateBlacklisterResponse {}
 
 message MsgUpdateOwner {
+  option (cosmos.msg.v1.signer) = "from";
   string from = 1;
   string address = 2;
 }
@@ -57,12 +61,14 @@ message MsgUpdateOwner {
 message MsgUpdateOwnerResponse {}
 
 message MsgAcceptOwner {
+  option (cosmos.msg.v1.signer) = "from";
   string from = 1;
 }
 
 message MsgAcceptOwnerResponse {}
 
 message MsgConfigureMinter {
+  option (cosmos.msg.v1.signer) = "from";
   string from = 1;
   string address = 2;
   cosmos.base.v1beta1.Coin allowance = 3 [(gogoproto.nullable) = false];
@@ -71,6 +77,7 @@ message MsgConfigureMinter {
 message MsgConfigureMinterResponse {}
 
 message MsgRemoveMinter {
+  option (cosmos.msg.v1.signer) = "from";
   string from = 1;
   string address = 2;
 }
@@ -78,6 +85,7 @@ message MsgRemoveMinter {
 message MsgRemoveMinterResponse {}
 
 message MsgMint {
+  option (cosmos.msg.v1.signer) = "from";
   string from = 1;
   string address = 2;
   cosmos.base.v1beta1.Coin amount = 3 [(gogoproto.nullable) = false];
@@ -86,6 +94,7 @@ message MsgMint {
 message MsgMintResponse {}
 
 message MsgBurn {
+  option (cosmos.msg.v1.signer) = "from";
   string from = 1;
   cosmos.base.v1beta1.Coin amount = 2 [(gogoproto.nullable) = false];
 }
@@ -93,6 +102,7 @@ message MsgBurn {
 message MsgBurnResponse {}
 
 message MsgBlacklist {
+  option (cosmos.msg.v1.signer) = "from";
   string from = 1;
   string address = 2;
 }
@@ -100,6 +110,7 @@ message MsgBlacklist {
 message MsgBlacklistResponse {}
 
 message MsgUnblacklist {
+  option (cosmos.msg.v1.signer) = "from";
   string from = 1;
   string address = 2;
 }
@@ -107,18 +118,21 @@ message MsgUnblacklist {
 message MsgUnblacklistResponse {}
 
 message MsgPause {
+  option (cosmos.msg.v1.signer) = "from";
   string from = 1;
 }
 
 message MsgPauseResponse {}
 
 message MsgUnpause {
+  option (cosmos.msg.v1.signer) = "from";
   string from = 1;
 }
 
 message MsgUnpauseResponse {}
 
 message MsgConfigureMinterController {
+  option (cosmos.msg.v1.signer) = "from";
   string from = 1;
   string controller = 2;
   string minter = 3;
@@ -127,6 +141,7 @@ message MsgConfigureMinterController {
 message MsgConfigureMinterControllerResponse {}
 
 message MsgRemoveMinterController {
+  option (cosmos.msg.v1.signer) = "from";
   string from = 1;
   string controller = 2;
 }
