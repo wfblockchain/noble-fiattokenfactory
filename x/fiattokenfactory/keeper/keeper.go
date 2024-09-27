@@ -1,7 +1,6 @@
 package keeper
 
 import (
-	"encoding/binary"
 	"fmt"
 
 	errors "github.com/pkg/errors"
@@ -46,20 +45,6 @@ func NewKeeper(
 
 func (k Keeper) Logger(ctx sdk.Context) log.Logger {
 	return ctx.Logger().With("module", fmt.Sprintf("x/%s", types.ModuleName))
-}
-
-func (k Keeper) setDone(ctx sdk.Context, name string) {
-	store := ctx.KVStore(k.storeKey)
-	store.Set(encodeDoneKey(name, ctx.BlockHeight()), []byte{1})
-}
-
-// encodeDoneKey - concatenate DoneByte, height and upgrade name to form the done key
-func encodeDoneKey(name string, height int64) []byte {
-	key := make([]byte, 9+len(name)) // 9 = donebyte + uint64 len
-	key[0] = types.DoneByte
-	binary.BigEndian.PutUint64(key[1:9], uint64(height))
-	copy(key[9:], name)
-	return key
 }
 
 // ValidatePrivileges checks if a specified address has already been assigned to a privileged role.
